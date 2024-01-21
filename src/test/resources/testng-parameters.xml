@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite1" verbose="1">
+
+
+    <test name="invalid username">
+        <parameter name="Username" value="marius"/>
+        <parameter name="Password" value="SuperSecretPassword!"/>
+        <parameter name="errorMessage" value="Your username is invalid!"/>
+        <classes>
+            <class name="com.herokuapp.LoginNegativTest"/>
+        </classes>
+    </test>
+
+    <test name="invalid password">
+        <parameter name="Username" value="tomsmith"/>
+        <parameter name="Password" value="wrongpassword"/>
+        <parameter name="errorMessage" value="Your password is invalid!"/>
+        <classes>
+            <class name="com.herokuapp.LoginNegativTest"/>
+        </classes>
+    </test>
+
+    <test name="succesfull login">
+        <parameter name="browser" value="edge"/>
+        <parameter name="Username" value="tomsmith"/>
+        <parameter name="Password" value="SuperSecretPassword!"/>
+        <classes>
+            <class name="com.herokuapp.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="succesfull logout">
+        <parameter name="Username" value="tomsmith"/>
+        <parameter name="Password" value="SuperSecretPassword!"/>
+        <classes>
+            <class name="com.herokuapp.LogoutTest"/>
+        </classes>
+    </test>
+</suite>
