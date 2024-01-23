@@ -22,7 +22,7 @@
     </test>
 
     <test name="succesfull login">
-        <parameter name="browser" value="edge"/>
+        <parameter name="browser" value="firefox"/>
         <parameter name="Username" value="tomsmith"/>
         <parameter name="Password" value="SuperSecretPassword!"/>
         <classes>
@@ -37,4 +37,5 @@
             <class name="com.herokuapp.LogoutTest"/>
         </classes>
     </test>
+
 </suite>
