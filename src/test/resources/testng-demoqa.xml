@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite DemoQa" verbose="1">
+
+    <parameter name="browser" value="chrome"/>
+
+    <test name="TextBox Validation">
+        <parameter name="link" value="https://demoqa.com/text-box"/>
+        <classes>
+            <class name="com.demoqa.TextboxTest"/>
+        </classes>
+    </test>
+
+    <test name="ChecBox Validation">
+        <parameter name="link" value="https://demoqa.com/checkbox"/>
+        <classes>
+            <class name="com.demoqa.CheckboxTest"/>
+        </classes>
+    </test>
+
+    <test name="RadioButton Validation">
+        <parameter name="link" value="https://demoqa.com/radio-button"/>
+        <classes>
+            <class name="com.demoqa.RadiobuttonTest"/>
+        </classes>
+    </test>
+
+</suite>

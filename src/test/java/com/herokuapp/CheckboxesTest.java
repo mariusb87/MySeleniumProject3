@@ -24,7 +24,7 @@ public class CheckboxesTest {
             case "chrome": driver = new ChromeDriver();break;
             case "edge": driver = new EdgeDriver();break;
             case "firefox": System.setProperty("webdriver.gecko.driver",
-                    "src/test/resources/geckodriver-v0.34.0-win-aarch64/geckodriver.exe");
+                    "C:\\Users\\Marius\\IdeaProjects\\MySeleniumProject3\\src\\test\\resources\\geckodriver-v0.34.0-win-aarch64\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 break;
             default: driver = new ChromeDriver();
