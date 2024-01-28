@@ -8,24 +8,24 @@ import org.testng.annotations.Test;
 public class CheckboxTest extends BaseTest {
     @Test
     public void checkAll(){
-        CheckBox checkbox = new CheckBox(driver);
-        checkbox.clickExpand();
-        checkbox.selectAll();;
+        CheckBox checkboxPage = new CheckBox(driver);
+        checkboxPage.clickExpand();
+        checkboxPage.selectAll();;
 
         sleep(2000);
 
-        //Assert.assertTrue(checkbox.selected());
-        Assert.assertTrue(checkbox.getSelectedResult().contains("home"));
+        //Assert.assertTrue(checkboxPage.selected());
+        Assert.assertTrue(checkboxPage.getSelectedResult().contains("home"));
 
     }
     @Test
     public void uncheckAll(){
-        CheckBox checkbox = new CheckBox(driver);
-        checkbox.clickExpand();
+        CheckBox checkboxPage = new CheckBox(driver);
+        checkboxPage.clickExpand();
 
-        checkbox.unselectAll();
+        checkboxPage.unselectAll();
         sleep(2000);
-        Assert.assertFalse(checkbox.selected());
+        Assert.assertFalse(checkboxPage.selected());
 
     }
 }

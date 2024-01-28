@@ -8,19 +8,19 @@ public class TextboxTest extends BaseTest{
     @Test
     public void textBoxValidation(){
 
-        Textbox textbox = new Textbox(driver);
+        Textbox textboxPage = new Textbox(driver);
 
-        textbox.setTextInName("Marius");
-        textbox.setTextInEmail("marius@qa.com");
-        textbox.setTextInCurrentAddress("Cluj-Napoca, Romania");
-        textbox.setTextInPermanentAddress("Gherla, Romania");
+        textboxPage.setTextInName("Marius");
+        textboxPage.setTextInEmail("marius@qa.com");
+        textboxPage.setTextInCurrentAddress("Cluj-Napoca, Romania");
+        textboxPage.setTextInPermanentAddress("Gherla, Romania");
 
-        textbox.clikSubmit();
+        textboxPage.clikSubmit();
 
-        Assert.assertTrue(textbox.getOutputName().contains("Marius"));
-        Assert.assertTrue(textbox.getOutputEmail().contains("marius@qa.com"));
-        Assert.assertTrue(textbox.getOutputCurrentAdress().contains("Cluj-Napoca, Romania"));
-        Assert.assertTrue(textbox.getOutputPermanentAddress().contains("Gherla, Romania"));
+        Assert.assertTrue(textboxPage.getOutputName().contains("Marius"));
+        Assert.assertTrue(textboxPage.getOutputEmail().contains("marius@qa.com"));
+        Assert.assertTrue(textboxPage.getOutputCurrentAdress().contains("Cluj-Napoca, Romania"));
+        Assert.assertTrue(textboxPage.getOutputPermanentAddress().contains("Gherla, Romania"));
 
     }
 

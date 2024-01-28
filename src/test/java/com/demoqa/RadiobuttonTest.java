@@ -8,16 +8,16 @@ public class RadiobuttonTest extends BaseTest{
 
     @Test
     public void radioButtonValidation(){
-        RadioButton radio = new RadioButton(driver);
+        RadioButton radiobuttonPage = new RadioButton(driver);
 
-        radio.clickRadio1();
-        Assert.assertTrue(radio.getSelectedResult().contains("Yes"));
+        radiobuttonPage.clickRadio1();
+        Assert.assertTrue(radiobuttonPage.getSelectedResult().contains("Yes"));
 
-        radio.clickRadio2();
-        Assert.assertTrue(radio.getSelectedResult().contains("Impressive"));
+        radiobuttonPage.clickRadio2();
+        Assert.assertTrue(radiobuttonPage.getSelectedResult().contains("Impressive"));
 
-        radio.clickRadio3();
-        Assert.assertTrue(radio.getSelectedResult().contains("No"));
+        radiobuttonPage.clickRadio3();
+        Assert.assertTrue(radiobuttonPage.getSelectedResult().contains("No"));
     }
 
 }
