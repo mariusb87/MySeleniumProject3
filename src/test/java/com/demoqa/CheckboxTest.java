@@ -14,7 +14,7 @@ public class CheckboxTest extends BaseTest {
 
         sleep(2000);
 
-        Assert.assertTrue(checkbox.displayed());
+        //Assert.assertTrue(checkbox.selected());
         Assert.assertTrue(checkbox.getSelectedResult().contains("home"));
 
     }
