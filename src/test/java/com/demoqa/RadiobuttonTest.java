@@ -18,6 +18,7 @@ public class RadiobuttonTest extends BaseTest{
 
         radiobuttonPage.clickRadio3();
         Assert.assertTrue(radiobuttonPage.getSelectedResult().contains("No"));
+
     }
 
 }
