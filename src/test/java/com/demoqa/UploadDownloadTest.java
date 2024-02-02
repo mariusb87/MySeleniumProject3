@@ -15,6 +15,7 @@ public class UploadDownloadTest {
 
     public static WebDriver driver;
     private static String downloadPath = "C:\\Users\\Marius\\Downloads\\";
+    private static String uploadFilePath = "C:\\Users\\Marius\\IdeaProjects\\MySeleniumProject3\\src\\test\\resources\\seleniumUpload.txt";
 
     @BeforeTest
     public void setUp(){
@@ -44,7 +45,7 @@ public class UploadDownloadTest {
     public void uploadTest() {
 
         WebElement chooseFileButton = driver.findElement(By.xpath("//input[@id='uploadFile']"));
-        chooseFileButton.sendKeys("C:\\Users\\Marius\\IdeaProjects\\MySeleniumProject3\\src\\test\\resources\\seleniumUpload.txt");
+        chooseFileButton.sendKeys(uploadFilePath);
 
         WebElement actualResult = driver.findElement(By.xpath("//p[@id='uploadedFilePath']"));
         String expectedResult = "C:\\fakepath\\seleniumUpload.txt";
