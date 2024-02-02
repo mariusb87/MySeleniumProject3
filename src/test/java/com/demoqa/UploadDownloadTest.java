@@ -1,21 +1,20 @@
 package com.demoqa;
 
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+import java.io.File;
+import java.io.IOException;
 
 public class UploadDownloadTest {
+
     public static WebDriver driver;
+    private static String downloadPath = "C:\\Users\\Marius\\Downloads\\";
 
     @BeforeTest
     public void setUp(){
@@ -30,9 +29,14 @@ public class UploadDownloadTest {
         }
     }
     @Test(priority = 1)
-    public void downloadTest() {
+
+    public void downloadTest() throws InterruptedException, IOException {
         WebElement downloadButton = driver.findElement(By.id("downloadButton"));
         downloadButton.click();
+
+
+
+        Assert.assertTrue(isFileDownloaded(downloadPath, "sampleFile.jpeg"), "Failed to download Expected document");
 
     }
 
@@ -48,11 +52,23 @@ public class UploadDownloadTest {
     }
 
 
-
     @AfterTest(alwaysRun = true)
     public void tearDown(){
         System.out.println("Inchide pagina");
         driver.quit();
+    }
+
+    public static boolean isFileDownloaded(String downloadPath, String fileName) {
+        boolean flag = false;
+        File dir = new File(downloadPath);
+        File[] dir_contents = dir.listFiles();
+
+        for (int i = 0; i < dir_contents.length; i++) {
+            if (dir_contents[i].getName().equals(fileName))
+                return flag=true;
+        }
+
+        return flag;
     }
 
 }
