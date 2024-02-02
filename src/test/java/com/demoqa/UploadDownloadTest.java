@@ -35,10 +35,7 @@ public class UploadDownloadTest {
         WebElement downloadButton = driver.findElement(By.id("downloadButton"));
         downloadButton.click();
 
-
-
         Assert.assertTrue(isFileDownloaded(downloadPath, "sampleFile.jpeg"), "Failed to download Expected document");
-
     }
 
     @Test(priority = 2)
